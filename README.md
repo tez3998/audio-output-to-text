@@ -27,3 +27,6 @@ aptのようなパッケージマネージャーを使用してインストー�
 ```bash
 python run.py
 ```
+
+# その他
+[Qiita](https://qiita.com/3998/items/a18b50aaf58e0176e6a5)の方で紹介しました。
