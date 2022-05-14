@@ -3,8 +3,6 @@ import json
 from typing import List
 import multiprocessing as mp
 import numpy as np
-import psutil
-import signal
 import soundcard as sc
 import sounddevice as sd
 import vosk
@@ -53,25 +51,20 @@ def main():
     
     audio_queue: mp.Queue = mp.Queue()
     sample_rate: int = int(sd.query_devices(kind="output")["default_samplerate"])
-    
-    cap_proc: mp.Process = mp.Process(target=capture_audio_output,
-                                      args=(audio_queue, CAPTURE_SEC, sample_rate,))
     stt_proc: mp.Process = mp.Process(target=speech_to_text,
                                       args=(audio_queue, sample_rate))
     
     print("Type Ctrl+C to stop")
     
     stt_proc.start()
-    cap_proc.start()
     
     try:
+        capture_audio_output(audio_queue=audio_queue, capture_sec=CAPTURE_SEC, sample_rate=sample_rate)
         stt_proc.join()
-        cap_proc.join()
     except KeyboardInterrupt:
-        cap_proc.terminate()
         stt_proc.terminate()
         
-        print("Done")
+        print("\nDone")
 
 
 if __name__ == "__main__":
