@@ -1,6 +1,5 @@
 import copy
 import json
-from typing import List
 import multiprocessing as mp
 import numpy as np
 import soundcard as sc
