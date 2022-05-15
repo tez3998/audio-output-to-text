@@ -4,6 +4,10 @@
 音声認識にはVOSKを用いています。
 
 # デモ
+VOICEVOXから出力された音を文字起こししました。
+
+＊480p以上でないと、文字起こしされた結果が見えにくいかもしれません。
+
 [![](https://img.youtube.com/vi/8TGZBzI9u7E/0.jpg)](https://www.youtube.com/watch?v=8TGZBzI9u7E)
 
 # 動作環境
