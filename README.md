@@ -24,10 +24,6 @@ macOSは手元に環境がないため、動作を確認できていません。
 - sounddevice
 - vosk
 
-# Linux上で動かす場合
-Pythonのsoundcardライブラリを使うためにはlibsndfileが必要です。
-aptのようなパッケージマネージャーを使用してインストールしてください。
-
 # 使用方法
 ```bash
 python run.py
