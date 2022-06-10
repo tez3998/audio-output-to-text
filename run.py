@@ -25,7 +25,7 @@ def speech_to_text(audio_queue: mp.Queue,
     
     vosk.SetLogLevel(NO_LOG)
     
-    model: vosk.Model = vosk.Model(MODEL_PATH)
+    model: vosk.Model = vosk.Model(model_path=MODEL_PATH)
     recognizer = vosk.KaldiRecognizer(model, sample_rate)
     
     print("Recognizer is ready")
